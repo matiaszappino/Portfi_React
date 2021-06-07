@@ -15,10 +15,10 @@ const Main = () => {
               <div>
                 <h1>Widget Title</h1>
                 <p>Subtitle</p>
+                
               </div>
-              <MouseOverPopover />
-              <InputField/>
             </div>
+            <InputField/>
           </div>
 
           <div className="charts__right">

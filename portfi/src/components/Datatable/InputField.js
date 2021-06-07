@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import Datatable from "./Datatable";
+import ReturnTicker from "./returnTicker"
+
 /* - Input String
 - Input Float
 - Start Fecha
@@ -36,11 +38,17 @@ export default function InputField({ data }) {
         .then(res => setDataFromBackend(res.data || []))
     },[])
 
+    //console.log(dataFromBackend)
+    return (<div>
+        <ReturnTicker/>
+        <Datatable data={dataFromBackend}/>
+    </div>
+    );
     
+}
 
-    console.log(dataFromBackend)
-    return (
-        /*<div>
+
+/* <div>
         <div className="form-field"></div>
         <div className="control"></div>
         <form onSubmit={handleSubmit}>
@@ -58,6 +66,13 @@ export default function InputField({ data }) {
         onChange={handleInputChange}
         />
         <input 
+        type="submit"
+        name="add"
+        value = "add"
+        />
+        </form>
+        <form onSubmit={handleSubmit}>
+        <input 
         type="date" 
         value={startDate}
         name="startDate"
@@ -74,12 +89,4 @@ export default function InputField({ data }) {
         name="submit"
         value = "Submit"
         />
-        </form>
-        
-    </div>*/
-    <div>
-        <Datatable data={dataFromBackend}/>
-    </div>
-    );
-    
-}
+        </form>*/
