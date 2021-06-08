@@ -23,6 +23,7 @@ const App = () => {
   };
   return (
       <div className="container">
+        
         {/* <Navbar sidebarOpen={sidebarOpen} openSidebar={openSidebar} /> */}
         <Sidebar sidebarOpen={sidebarOpen} closeSidebar={closeSidebar} />
           <Switch>

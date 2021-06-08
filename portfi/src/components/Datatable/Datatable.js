@@ -1,26 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext} from "react";
 import axios from 'axios'
+import { PortfiContext } from "../context/portfiContext";
 
 
-export default function Datatable({ data }) {
-    console.log(data)
-    const [fil, setFilter] = useState();
-    setFilter(data);
-    console.log(fil)
-    const columns = fil[0] && Object.keys(fil[0])
+export default function Datatable() {
+    //console.log(data)
+    //const [fil, setFilter] = useState();
+    //setFilter(data);
+    //console.log(fil)
+    const { dataFromBackend, dataFiltrada, setDataFiltrada, setLoading, setLoadingChart  } = useContext(PortfiContext)
+    useEffect(() => {
+        setDataFiltrada(dataFromBackend)
+    },[dataFromBackend])
+    useEffect(() => {
+        setLoading(true)
+    },[])
+    const columns = dataFromBackend[0] && Object.keys(dataFromBackend[0])
+    
     const deleteAsset = (id) => {
-        fil.filter((data, index) => {
-            if (id !== index) {
-                return data
-            }
-        })
-        setFilter(data)
+
+        setDataFiltrada(dataFiltrada.filter((data, index) => (id !== index)))
+        //setLoading(true)
+        setLoadingChart(true)
+        
     }
 
     return (
     <table cellPadding={6} cellSpacing={1}>
         <tbody>
-            {fil.map((row, index) => <tr key={index}>
+            {dataFiltrada.map((row, index) => <tr key={index}>
                 {
                     columns.map(column => <td>{row[column]}</td>)
                 }

@@ -1,37 +1,25 @@
-import React, { Component } from 'react';
+import React, { useContext, useState } from 'react';
 import Chart from 'react-apexcharts'
+import { PortfiContext } from './context/portfiContext';
 
-class Donut extends Component {
+export const Donut = () => {
+  const { chartData } = useContext(PortfiContext)
+    
+  const [state, setState] = useState(
+  {
+    options: {
+      labels: ['Bonds', 'Cash', 'Stocks']
+    },
+    series: [33, 33, 33]
+  })
 
-  constructor(props) {
-    super(props);
+  const { options, series } = state
 
-    this.state = {
-      options: {
-      labels: ['Bonds', 'Cash', 'Stocks']},
-      series: [33, 33, 33],
-    }
-  }
-
-  async componentDidMount() {
-    const url = "/composition";
-    const response = await fetch(url);
-    const data = await response.json();
-    let bonds = data['bonds']
-    let stocks = data['stocks']
-    let cash = data['cash']
-    let array = [bonds, cash, stocks]
-    return this.setState({series:array})
-  }
-
-  render() {
-
-    return (
-      <div className="donut">
-        <Chart options={this.state.options} series={this.state.series} type="donut" width="380" />
-      </div>
-    );
-  }
+  return (
+  <Chart 
+  options={options}
+  series={series? series:series} 
+  type="donut" 
+  width="380" />
+  )
 }
-
-export default Donut;

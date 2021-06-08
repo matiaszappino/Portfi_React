@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from 'axios';
+import React, { useContext, useEffect, useState } from "react";
+import { PortfiContext } from "../context/portfiContext";
+
 import Datatable from "./Datatable";
 import ReturnTicker from "./returnTicker"
 
@@ -11,7 +12,9 @@ import ReturnTicker from "./returnTicker"
 - Boton Submit
 */
 export default function InputField({ data }) {
-    const [dataFromBackend, setDataFromBackend] = useState([])
+    
+    const { dataFromBackend } = useContext(PortfiContext)
+    
     const [value, setValue] = useState({
         ticker : '',
         weight : 0,
@@ -33,10 +36,7 @@ export default function InputField({ data }) {
             alert("NO SEA NABO, MIJO")
         }
     }
-    useEffect(() => {
-        axios.get('/portfolio')
-        .then(res => setDataFromBackend(res.data || []))
-    },[])
+    
 
     //console.log(dataFromBackend)
     return (<div>

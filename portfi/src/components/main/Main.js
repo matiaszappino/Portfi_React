@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Main.css";
 import MouseOverPopover  from "../Popover";
-import Donut from "../donut_graph";
+import {Donut} from "../donut_graph";
 import InputField from '../Datatable/InputField';
 
 const Main = () => {
+  
+  const [series, setSeries] = useState();
+  
+
   return (
     <main>
       <div className="main__container">
@@ -29,7 +33,7 @@ const Main = () => {
               </div>
               <MouseOverPopover />
             </div>
-            <Donut />
+            <Donut series={series}/>
           </div>
 
           <div className="charts__left">
