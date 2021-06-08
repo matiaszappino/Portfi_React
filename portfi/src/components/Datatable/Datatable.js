@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext} from "react";
 import axios from 'axios'
 import { PortfiContext } from "../context/portfiContext";
-
+import delPost from './delPost'
 
 export default function Datatable() {
-    //console.log(data)
-    //const [fil, setFilter] = useState();
-    //setFilter(data);
-    //console.log(fil)
+    
     const { dataFromBackend, dataFiltrada, setDataFiltrada, setLoading, setLoadingChart  } = useContext(PortfiContext)
+    
+    const {data, error, executePost} = delPost();
+    
     useEffect(() => {
         setDataFiltrada(dataFromBackend)
     },[dataFromBackend])
@@ -22,9 +22,9 @@ export default function Datatable() {
         setDataFiltrada(dataFiltrada.filter((data, index) => (id !== index)))
         //setLoading(true)
         setLoadingChart(true)
+        executePost({data:dataFromBackend[id]})
         
     }
-
     return (
     <table cellPadding={6} cellSpacing={1}>
         <tbody>

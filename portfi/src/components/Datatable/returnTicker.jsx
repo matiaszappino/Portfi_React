@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import UsePost from './usePost'
+import UsePost from './addPost'
 import { useContext } from "react";
 import { PortfiContext } from "../context/portfiContext";
 export default function InputTicker() {
