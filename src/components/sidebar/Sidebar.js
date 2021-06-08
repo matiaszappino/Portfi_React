@@ -24,14 +24,16 @@ const Sidebar = (props) => {
       </div>
       <div className="sidebar__menu">
         <div>
-        <NavLink
-          style={{ textDecoration: 'none' }}
-          exact
-          className="sidebar__link"
-          activeClassName="active_menu_link"
-          to="/">
-            <i className="fa fa-home"/>Dashboard
-        </NavLink>
+          <NavLink
+            style={{ textDecoration: "none" }}
+            exact
+            className="sidebar__link"
+            activeClassName="active_menu_link"
+            to="/"
+          >
+            <i className="fa fa-home" />
+            Dashboard
+          </NavLink>
         </div>
         {/* <h2>MY PORTFOLIOS</h2>
           <NavLink to='/portfolioa'>
@@ -54,7 +56,7 @@ const Sidebar = (props) => {
           </NavLink> */}
         <NavLink
           exact
-          style={{ textDecoration: 'none' }}
+          style={{ textDecoration: "none" }}
           className="sidebar__link"
           activeClassName="active_menu_link"
           to="/benchmarks"

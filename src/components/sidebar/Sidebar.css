@@ -17,6 +17,7 @@
 .sidebar__img {
   display: flex;
   align-items: center;
+  margin-left: -10%;
 }
 .sidebar__title > div > img {
   width: 75px;
@@ -42,13 +43,13 @@
   color: #f3f4f6;
   padding: 10px;
   border-radius: 3px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
   display: inline-block;
   text-decoration: 'inherit';
 }
 .active_menu_link {
-  background: rgba(62, 161, 117, 0.3);
-  color: #3ea175;
+  background: #3f51b5;
+  width: 70%;
 }
 .sidebar__link > a {
   text-decoration: none;
