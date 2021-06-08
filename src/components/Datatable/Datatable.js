@@ -57,11 +57,11 @@ export default function Datatable() {
     setPage(0);
   };
   return (
-    <Paper>
-      <TableContainer style={{ maxHeight: '250px', border: '0px'}}>
-        <Table stickyHeader cellPadding={6} cellSpacing={1}>
+    <Paper elevation={0}>
+      <TableContainer elevation={0} style={{ maxHeight: '250px', border: '0px'}}>
+        <Table elevation={0} stickyHeader cellPadding={6} cellSpacing={1}>
           <TableHead>
-            <TableBody>
+            <TableBody elevation={0}>
               {dataFiltrada.map((row, index) => <TableRow key={index}>
                 {
                   columns.map(column => <TableCell>{row[column]}</TableCell>)
