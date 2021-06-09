@@ -16,8 +16,9 @@ const Navbar = ({ sidebarOpen, openSidebar }) => {
         </a>
       </div>
       <div className="navbar__right">
+      <i class="fa fa-user-circle"></i>
         <Link to='/signup'>
-          LOG IN / SIGN UP
+          LOG IN
         </Link>
       </div>
     </nav>
