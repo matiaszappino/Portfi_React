@@ -11,7 +11,8 @@ class LineGraph extends Component {
           width: 1.5
         },
         chart: {
-          id: "basic-bar"
+          id: "basic-bar",
+          width: "100%"
         },
         xaxis: {
           categories: ['May 2020', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr 2021'],

@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    width: '100%',
   },
 });
 
@@ -30,7 +30,7 @@ const rows = [
 const StyledTableCell = withStyles((theme) => ({
   head: {
     backgroundColor: '#3f51b5',
-    color: theme.palette.common.white,
+    color: '#fff',
   },
   body: {
     fontSize: 14,
