@@ -5,9 +5,9 @@ import { PortfiContext } from './context/portfiContext';
 export const Donut = () => {
   const { compositionData } = useContext(PortfiContext)
   const [ charData, setChartData] = useState([])
-  let [bonds, setBonds] = useState(0.0)
-  let [stocks, setStocks] = useState(0.0)
-  let [cash, setCash] = useState(0.0)
+  let [bonds, setBonds] = useState(parseFloat(0.0))
+  let [stocks, setStocks] = useState(parseFloat(0.0))
+  let [cash, setCash] = useState(parseFloat(0.0))
 
   useEffect ( () => {
     let rawChartData = []
@@ -30,7 +30,7 @@ export const Donut = () => {
     let cash_ = Math.abs((bonds + stocks) -1 )
     setCash(cash_)
     setEstado({...estado, series:[parseFloat(bonds), parseFloat(cash_), parseFloat(stocks)]})
-    //console.log(estado)
+    console.log(estado)
   }, [compositionData]);
 
   
@@ -58,7 +58,7 @@ export const Donut = () => {
       options: {
         labels: ['Bonds', 'Cash', 'Stocks']
       },
-      series: [bonds ,33, stocks]
+      series: [bonds ,cash, stocks]
     })
     
     const { options, series } = estado

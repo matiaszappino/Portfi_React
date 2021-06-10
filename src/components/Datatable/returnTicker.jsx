@@ -44,9 +44,20 @@ export default function InputTicker() {
   }
   const handleOnClickAdd = event => {
     event.preventDefault();
-    executePost({ data: { ticker, weight } })
-    setLoading(true)
+    let flag = false
+    if (!(ticker === "")) {
+      dataFiltrada.map((asset) => {
+        if (asset.ticker.includes(ticker) === true) {
+          flag = true
+        }
+      })
+    }
+    if (flag === false) {
+      executePost({ data: { ticker, weight } })
+      setLoading(true)
+    }
   }
+
 
   return (
     <div style={{ marginBottom: "10px" }}>
