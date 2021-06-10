@@ -12,6 +12,7 @@ export const PortfiProvider = ({children}) => {
     const [listAssets, setListAssets] = useState([])
     const [compositionData, setCompositionData] = useState([])
     
+    const[performance, setPerformance] = useState({})
       
     useEffect ( async () =>{
         if (loading) {
@@ -41,39 +42,8 @@ export const PortfiProvider = ({children}) => {
         setDataFromBackend(list_assets || [])
     }
 
-    // function DataForChart(data) {
-    //     let ticker = ""
-    //     let composition = {}
-    //     let asset = {}
-    //     for (let i = 0; i < data.length; i++){
-    //         ticker = data[i].ticker;
-    //         composition = data[i].composition;
-    //         asset[ticker] = composition;
-    //         //list_assets.push(asset)
-    //         setListAssets(...listAssets, asset)
-    //     };
-    //     setCompositionData(listAssets)
-    //     console.log("lista de assets", listAssets)
-    //     console.log("Composition Data", compositionData)
-    // };
-
-    // useEffect(async () => {
-    //     if (loadingChart) {
-    //         const url = "/composition";
-    //         const response = await fetch(url);
-    //         const data = await response.json();
-    //         let bonds = data['bonds']
-    //         let stocks = data['stocks']
-    //         let cash = data['cash']
-    //         let array = [bonds, cash, stocks]
-    //         setchartData({series:array})
-    //         console.log(chartData)
-    //         setLoadingChart(false)
-    //     }
-    // },[dataFiltrada, loadingChart])
-    
     return (
-        <PortfiContext.Provider value={{dataFromBackend, setDataFromBackend, dataFiltrada, setDataFiltrada, setLoading, setLoadingChart, listAssets, setListAssets, compositionData, setCompositionData, loading
+        <PortfiContext.Provider value={{dataFromBackend, setDataFromBackend, dataFiltrada, setDataFiltrada, setLoading, setLoadingChart, listAssets, setListAssets, compositionData, setCompositionData, loading, performance, setPerformance
         }}>
             {children}
         </PortfiContext.Provider>

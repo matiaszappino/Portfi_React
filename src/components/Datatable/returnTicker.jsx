@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 export default function InputTicker() {
-  const { setLoading, setDataFiltrada, dataFiltrada, dataFromBackend, loading } = useContext(PortfiContext)
+  const { setLoading, setDataFiltrada, dataFiltrada, dataFromBackend, loading, performance, setPerformance } = useContext(PortfiContext)
   const [ticker, setTicker] = useState("");
   const [weight, setWeight] = useState(0);
   const [startDate, setStart] = useState("");
@@ -34,13 +34,13 @@ export default function InputTicker() {
   const { gral_data, error2, executePortfolio } = CalculatePortfi();
 
   useEffect ( () => {
-    console.log(gral_data)
+    setPerformance(gral_data)
   }, [gral_data])
 
   const handleSubmit = event => {
     event.preventDefault();
     if (!(startDate === "" || endDate === "")) {
-      console.log("DataFiltrada antes de irse", dataFiltrada)
+      //console.log("DataFiltrada antes de irse", dataFiltrada)
       executePortfolio({ data: { dataFiltrada, startDate, endDate } })
     }
     setLoading(true)

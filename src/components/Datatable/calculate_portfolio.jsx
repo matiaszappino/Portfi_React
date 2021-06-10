@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default function CalculatePortfi() {
     const [gral_data, setData] = useState({
-        gral_data: undefined,
+        gral_data: {},
         error2: undefined
     });
     
@@ -12,7 +12,7 @@ export default function CalculatePortfi() {
             setData({gral_data : response.data})
         }).catch(error => {
             setData({ error2: error.message,
-            gral_data: undefined})
+            gral_data: {}})
         })    
     };
     return {...gral_data, executePortfolio};
