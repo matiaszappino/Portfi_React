@@ -68,11 +68,11 @@ export default function PerformanceTable() {
   }
 
   const rows = [
-    // createData('Return', 9.62, 7.58),
-    // createData('Sharpe', 9.70, 10.16),
-    // createData('Sharpe Ratio', 9.70, 10.16),
-    // createData('Down Capture Ratio', 86.88, 100.00),
-    // createData('Volatility', 103.85, 100.00),
+    createData('Return', 9.62, 7.58),
+    createData('Sharpe', 9.70, 10.16),
+    createData('Sharpe Ratio', 9.70, 10.16),
+    createData('Down Capture Ratio', 86.88, 100.00),
+    createData('Volatility', 103.85, 100.00),
 
   ];
 
