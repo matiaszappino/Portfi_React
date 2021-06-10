@@ -30,28 +30,9 @@ export const Donut = () => {
     let cash_ = Math.abs((bonds + stocks) -1 )
     setCash(cash_)
     setEstado({...estado, series:[parseFloat(bonds), parseFloat(cash_), parseFloat(stocks)]})
-    console.log(estado)
+    //console.log(estado)
   }, [compositionData]);
 
-  
-  // function DataForChart(compositionData) {
-  //       console.log("entro en data for chart")
-  //       let ticker = ""
-  //       console.log("despues de ticker")
-  //       let composition = {}
-  //       console.log("despues de composition")
-  //       let asset = {}
-  //       console.log("despues de aaset")
-  //       for (let i = 0; i < compositionData.length; i++){
-  //           console.log("dentro del for")
-  //           ticker = compositionData[i].ticker;
-  //           composition = compositionData[i].composition;
-  //           asset[ticker] = composition;
-  //           //list_assets.push(asset)
-  //           setChartData(...charData, asset)
-  //       };
-  //       console.log("Chart Data", charData)
-  //   };
   
   const [estado, setEstado] = useState(
     {

@@ -33,6 +33,9 @@ export default function InputTicker() {
   const { data, error, executePost } = UsePost();
   const { gral_data, error2, executePortfolio } = CalculatePortfi();
 
+  useEffect ( () => {
+    console.log(gral_data)
+  }, [gral_data])
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -42,6 +45,7 @@ export default function InputTicker() {
     }
     setLoading(true)
   }
+
   const handleOnClickAdd = event => {
     event.preventDefault();
     let flag = false
@@ -73,7 +77,3 @@ export default function InputTicker() {
     </div>
   )
 };
-
-
-// <input type="submit" value="Add"/>
-// <input type="text" value={ticker} name='ticker' onChange={event => setTicker(event.target.value)}/>

@@ -7,8 +7,8 @@ export default function CalculatePortfi() {
         error2: undefined
     });
     
-    const executePortfolio = ({ data }) => {
-        axios.post('/calculatePortfi', data).then(response => {
+    const executePortfolio = async ({ data }) => {
+        await axios.post('/calculatePortfi', data).then(response => {
             setData({gral_data : response.data})
         }).catch(error => {
             setData({ error2: error.message,
