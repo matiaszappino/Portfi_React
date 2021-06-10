@@ -21,8 +21,8 @@ const Main = () => {
           <div className="charts__right">
             <div className="charts__right__title">
               <div>
-                <h1>Widget Title</h1>
-                <p>Subtitle</p>
+                <h1>Composition</h1>
+                <p>Composition of your Portfolio</p>
               </div>
               <MouseOverPopover />
             </div>
@@ -32,8 +32,8 @@ const Main = () => {
           <div className="charts__left">
             <div className="charts__left__title">
               <div>
-                <h1>Widget Title</h1>
-                <p>Subtitle</p>
+                <h1>Historic Returns</h1>
+                <p> From start date to end date</p>
               </div>
               <MouseOverPopover />
             </div>
