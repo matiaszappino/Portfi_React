@@ -8,9 +8,9 @@ import UserSettings from "./components/UserSettings/UserSettings.js"
 import PortfolioA from "./components/Portfolios/PortfolioA.js"
 import PortfolioB from "./components/Portfolios/PortfolioB.js"
 import PortfolioC from "./components/Portfolios/PortfolioC.js"
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import SignUp from "./components/UserSettings/SignUp";
-import SignIn from "./components/UserSettings/SignIn";
+import { /*BrowserRouter as Router, */Switch, Route } from "react-router-dom";
+// import SignUp from "./components/UserSettings/SignUp";
+// import SignIn from "./components/UserSettings/SignIn";
 import Benchmarks from "./components/Benchmarks"
 
 const App = () => {
@@ -32,8 +32,8 @@ const App = () => {
             <Route path="/portfoliob" component={PortfolioB} />
             <Route path="/portfolioc" component={PortfolioC} />
             <Route path="/usersettings" component={UserSettings} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/signin" component={SignIn} />
+            {/* <Route path="/signup" component={SignUp} />
+            <Route path="/signin" component={SignIn} /> */}
           </Switch>
       </div>
   );

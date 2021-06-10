@@ -24,24 +24,24 @@ const useStyles = makeStyles({
 });
 
 export default function Datatable() {
-  const { dataFromBackend, dataFiltrada, setDataFiltrada, setLoading, setLoadingChart } = useContext(PortfiContext)
+  const { dataFromBackend, dataFiltrada, setDataFiltrada, setLoading, setLoadingChart, incomingTicker, listAssets, setListAssets, compositionData , setCompositionData} = useContext(PortfiContext)
   const { data, error, executePost } = delPost();
 
   useEffect(() => {
     setDataFiltrada(dataFromBackend)
   }, [dataFromBackend])
+  
   useEffect(() => {
     setLoading(true)
   }, [])
+  
   const columns = dataFromBackend[0] && Object.keys(dataFromBackend[0])
 
   const deleteAsset = (id) => {
-
     setDataFiltrada(dataFiltrada.filter((data, index) => (id !== index)))
-    //setLoading(true)
-    setLoadingChart(true)
+    setCompositionData(listAssets)
     executePost({ data: dataFromBackend[id] })
-
+    setLoading(true)
   }
 
   const classes = useStyles();
@@ -56,7 +56,8 @@ export default function Datatable() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  return (
+
+  return ( 
     <Paper elevation={0}>
       <TableContainer elevation={0} style={{ maxHeight: '250px', border: '0px'}}>
         <Table elevation={0} stickyHeader cellPadding={6} cellSpacing={1}>

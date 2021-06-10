@@ -7,11 +7,11 @@ import { PortfiProvider } from "./components/context/portfiContext";
 
 ReactDOM.render(
   <Router>
-    <React.StrictMode>
+    <React.Fragment>
       <PortfiProvider>
       <App />
       </PortfiProvider>
-    </React.StrictMode>
+    </React.Fragment>
   </Router>,
   document.getElementById("root")
 );

@@ -7,7 +7,6 @@ export default function delPost() {
         error: undefined
     });
     const executePost = ({ data }) => {
-        console.log(data)
         axios.post('/deleteTicker', data).then(response => {
             setData({data : response.data})
         }).catch(error => {
